@@ -10,9 +10,6 @@ import csv  # 模組 - 處理 CSV
 from easygui import diropenbox  # 模組 - 直接導入選擇資料夾的UI畫面
 from openpyxl import load_workbook  # 模組 - 處理 Excel
 
-#import openpyxl
-#from openpyxl import Workbook
-
 Question = input('是否執行轉檔程式? (Y/N) ')
 
 if Question == 'Y': # 繼續執行
@@ -73,7 +70,7 @@ if Question == 'Y': # 繼續執行
                 Tatget['D13'] = "%s" % (Meas[7])
                 Tatget['D14'] = "%s" % (Meas[8])
 
-                Tatget['D16'] = "%s" % ('0')    #確認過後, 僅需修改成0就好.
+                Tatget['D16'] = "%d" % (int(float(Meas[9])))    #將科學記號化繁為簡為整數, QC確認OK.
                 Tatget['D17'] = "%s" % (Meas[10])
                 Tatget['D18'] = "%s" % (Meas[11])
                 Tatget['D20'] = "%s" % (Meas[12])
@@ -93,6 +90,7 @@ if Question == 'Y': # 繼續執行
                 print(Meas[9], type(Meas[9]))
 else:
     print('請先將檔案轉檔為Excel.')
+    quit()
 
 
 SNDataCrawler()
