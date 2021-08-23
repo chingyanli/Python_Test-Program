@@ -1,4 +1,4 @@
-''' Control - Chart 管制圖'''
+''' Control - Chart 管制圖(Example)'''
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MultipleLocator
 import numpy as np
